@@ -73,7 +73,6 @@ server.post("/api/user", (req, res) => {
 
 server.get("/api/user", async (req, res) => {
   try {
-    console.log("test");
     var sql =
       "SELECT user.user_id, user.first_name, user.last_name, user.email, role.name as role_name FROM user INNER JOIN role ON user.role_id = role.role_id ORDER By user_id DESC;";
     db.query(sql, function (error, result) {
